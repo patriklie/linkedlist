@@ -30,14 +30,26 @@ class LinkedList {
         this.size++;
     }
 
-/*     addAtIndex(data, index) {
+    addAtIndex(data, index) {
+        if (index > this.size) {
+            console.log('Index does not exist'); //sjekker om oppgitt index faktisk finnes
+            return;
+        }
+
+
         if (index === 0) {
-            this.addFirst(data);
-        } else if (index === this.size)
-        
+            this.addFirst(data); // vis index er 0 så bare bruker vi addFirst 
+        } else if (index === this.size) {
+            this.addLast(data); // vis index er samme som size bruker vi addLast
+        } else {
 
 
-    } */
+            
+        }
+            
+
+
+    }
 
     removeFirst() {
         if (!this.head) return; // er lista tom så bare return
