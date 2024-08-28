@@ -36,24 +36,56 @@ class LinkedList {
             return;
         }
 
-
-        if (index === 0) {
-            this.addFirst(data); // vis index er 0 så bare bruker vi addFirst 
+        if (index === 0 || !this.head) {
+            this.addFirst(data); // vis index er 0 eller lista er tom så bruker vi addFirst  VURDER ELSE IF på disse da
         } else if (index === this.size) {
             this.addLast(data); // vis index er samme som size bruker vi addLast
         } else {
+            let current = this.head;
+            let previous = null;
+            let count = 0;
+            const newNode = new Node(data);
 
-
-            
+            while (count < index) {
+                previous = current;
+                current = current.nextNode;
+                count++;
+            }     
+            previous.nextNode = newNode;
+            newNode.nextNode = current;
+            this.size++;
         }
-            
+    }
 
+    removeAtIndex(index) {
+        if (!this.head) {
+            console.log("Empty list nothing to remove!");
+            return;
+        } // er lista tom så bare return
 
+        if (index < 0 || index >= this.size) {
+            console.log("Index is out of bonds, nothing to remove here!");
+            return;
+        }
+
+        let current = this.head;
+        let previous = null;
+        let count = 0;
+
+        while (count < index) {
+            previous = current;
+            current = current.nextNode;
+            count++;
+        }
+
+        previous.nextNode = current.nextNode;
+        current.nextNode = null;
+        this.size--;
     }
 
     removeFirst() {
         if (!this.head) return; // er lista tom så bare return
-        if(!this.head.nextNode) {
+        if (!this.head.nextNode) {
             this.head = null; // er det kun en node i lista så sett head til null
         } else {
             this.head = this.head.nextNode;
@@ -99,5 +131,7 @@ liste1.addFirst(400);
 liste1.addFirst(300);
 liste1.addFirst(200);
 liste1.addFirst(100);
+
+liste1.addAtIndex(500, 3);
 
 liste1.printList();
