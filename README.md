@@ -1,41 +1,41 @@
-# LinkedList-implementasjon i JavaScript
+# LinkedList Implementation in JavaScript
 
-Dette prosjektet er en enkel implementasjon av en enkeltlenket liste i JavaScript. Det inkluderer flere nøkkelmetoder for å manipulere listen, som å legge til, fjerne og bytte noder.
+This project is a simple implementation of a singly linked list in JavaScript. It includes several key methods for manipulating the list, such as adding, removing, and swapping nodes.
 
-## Funksjonalitet
+## Functionality
 
-- **addFirst(data)**: Legger til en ny node med gitt data i begynnelsen av listen.
-- **addLast(data)**: Legger til en ny node på slutten av listen.
-- **addAtIndex(data, index)**: Legger til en ny node på den spesifiserte indeksen.
-- **removeAtIndex(index)**: Fjerner noden på den spesifiserte indeksen.
-- **removeFirst()**: Fjerner den første noden i listen.
-- **removeLast()**: Fjerner den siste noden i listen.
-- **swapNodes(node1, node2)**: Bytter to noder i listen ved referanse.
-- **findNode(data)**: Finner og returnerer en node med den angitte dataen.
-- **printList()**: Skriver ut hele listen.
+- **addFirst(data)**: Adds a new node with the given data at the beginning of the list.
+- **addLast(data)**: Adds a new node at the end of the list.
+- **addAtIndex(data, index)**: Adds a new node at the specified index.
+- **removeAtIndex(index)**: Removes the node at the specified index.
+- **removeFirst()**: Removes the first node in the list.
+- **removeLast()**: Removes the last node in the list.
+- **swapNodes(node1, node2)**: Swaps two nodes in the list by reference.
+- **findNode(data)**: Finds and returns a node with the specified data.
+- **printList()**: Prints the entire list.
 
-## Eksempel på bruk
+## Example Usage
 
-Her er et eksempel på hvordan du kan bruke `LinkedList`-klassen:
+Here is an example of how you can use the `LinkedList` class:
 
 ```javascript
 import LinkedList from './LinkedList.mjs';
 
-const liste = new LinkedList();
+const list = new LinkedList();
 
-liste.addFirst(500);
-liste.addFirst(400);
-liste.addFirst(300);
-liste.addFirst(200);
-liste.addFirst(100);
+list.addFirst(500);
+list.addFirst(400);
+list.addFirst(300);
+list.addFirst(200);
+list.addFirst(100);
 
-const node1 = liste.findNode(200);
-const node2 = liste.findNode(400);
+const node1 = list.findNode(200);
+const node2 = list.findNode(400);
 
-console.log("Før bytte:");
-liste.printList();
+console.log("Before swap:");
+list.printList();
 
-liste.swapNodes(node1, node2);
+list.swapNodes(node1, node2);
 
-console.log("Etter bytte:");
-liste.printList();
+console.log("After swap:");
+list.printList();
